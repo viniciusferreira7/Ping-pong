@@ -1,0 +1,350 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,body{
+    height: 100%;
+}
+
+
+.corrida{
+    width: 100%;
+    height: 605px;
+    border-left: 5px solid black;
+    border-bottom: 5px solid black;
+    display: none;
+
+}
+
+
+
+
+.box{
+    width: 300px;
+    height: 100px;
+    background-image: linear-gradient( to right, black, navy, blue);
+    -webkit-transition-property:width, height ;
+    transition-property: width, height;
+    -webkit-transition-duration: 3s;
+    transition-duration: 3s;
+    transition-delay: 2s;
+    transition-timing-function: ease;
+}
+
+
+
+.box2{
+    width: 300px;
+    height: 100px;
+    background-image: linear-gradient( to right, black, rgb(128, 0, 107), rgb(255, 0, 200));
+    transition-duration: 3s;
+    transition-delay: 2s;
+    transition-timing-function: linear;
+}
+
+
+
+.box3{
+    width: 300px;
+    height: 100px;
+    background-image: linear-gradient( to right, rgb(0, 0, 0), rgb(128, 126, 0), rgb(208, 255, 0));
+    transition-duration: 3s;
+    transition-delay: 2s;
+    transition-timing-function:  ease-in;
+}
+
+.box4{
+    width: 300px;
+    height: 100px;
+    background-image: linear-gradient( to right, rgb(0, 0, 0), rgb(128, 94, 0), rgb(255, 166, 0));
+    transition-duration: 3s;
+    transition-delay: 2s;
+    transition-timing-function:  ease-out;
+}
+
+.box5{
+    width: 300px;
+    height: 100px;
+    background-image: linear-gradient( to right, rgb(0, 0, 0), rgb(0, 87, 128), rgb(0, 195, 255));
+    transition-duration: 3s;
+    transition-delay: 2s;
+    transition-timing-function:  ease-in-out;
+}
+
+.box6{
+    width: 300px;
+    height: 100px;
+    background-image: linear-gradient( to right, rgb(0, 0, 0), rgb(4, 128, 0), rgb(30, 255, 0));
+    transition-duration: 3s;
+    transition-delay: 2s;
+    transition-timing-function:  cubic-bezier(5.6, 0.04, 0.98, 0.335);
+}
+
+
+
+.corrida:hover .box {
+    width: 100%;
+    width: 100%;
+    height: 100px;
+    background-image:linear-gradient(270deg, white, lightblue, blue , navy, black )
+}
+
+.corrida:hover .box2{
+    width: 100%;
+    height: 100px;
+    background-image:linear-gradient(270deg, white, rgb(230, 173, 213), rgb(255, 0, 157) , rgb(128, 0, 96), rgb(0, 0, 0) );
+   
+}
+
+.corrida:hover .box3{
+    width: 100%;
+    height: 100px;
+    background-image:linear-gradient(270deg, white, rgb(230, 173, 173), rgb(255, 0, 0) , rgb(128, 0, 0), black )
+}
+
+.corrida:hover .box4{
+    width: 100%;
+    width: 100%;
+    height: 100px;
+    background-image:linear-gradient(90deg,  rgb(0, 0, 0), rgb(128, 94, 0), rgb(255, 166, 0) , white )
+}
+
+.corrida:hover .box5{
+    width: 100%;
+    height: 100px;
+    background-image:linear-gradient(90deg, rgb(0, 0, 0), rgb(0, 92, 128), rgb(0, 217, 255), white );
+   
+}
+
+.corrida:hover .box6{
+    width: 100%;
+    height: 100px;
+    background-image:linear-gradient(90deg,   rgb(0, 0, 0), rgb(4, 128, 0), rgb(30, 255, 0), white)
+}
+
+.jogo{
+    width: 100%;
+    height: 100%;
+    padding: 20% 4%;
+    background-color: black;
+}
+
+.player-esquerdo{
+    width: 10px;
+    height: 80px;
+    background-color: white;
+    border-radius: 5px;
+    float: left;
+    position: relative;
+    animation-name: esquerdo;
+    animation-iteration-count: infinite;
+    animation-duration: 15s;
+
+}
+
+
+.player-direito{
+    width: 10px;
+    height: 80px;
+    background-color: white;
+    border-radius: 3px;
+    float: right;
+    animation-name: direito;
+    animation-iteration-count: infinite;
+    animation-duration: 15s;
+    position: relative;
+}
+
+
+
+
+.bola{
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    background-color: white;
+    animation-name: bola;
+    animation-duration: 15s;
+    animation-iteration-count: infinite;
+    position: relative;
+    left: 8px;
+    top:50px;
+
+
+}
+
+
+.branco{
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    background-color: yellow;
+    animation-name: branco;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+    position: absolute;
+    left: 0;
+    top:0;
+}
+
+@keyframes esquerdo{
+
+    0%{ top: 0;}
+    10% {top: -260px;}  
+    20%{top: 280px;}
+    30%{top: -50px;}
+    40%{ top: 0;}
+    50% {top: -260px;}  
+    60%{top: 280px;}
+    70%{top: 20px;}
+    80% {top: -260px;}  
+    90%{top: 280px;}
+    100%{top: 0;}
+
+}    
+
+@keyframes direito{
+
+    0%{ top: 0;}
+    10% {top: 260px;}  
+    20%{top: -260px;}
+    30%{top: 50px;}
+    40%{ top: 0;}
+    50% {top: 280px;}  
+    60%{top: -260px;}
+    70%{top: -20px;}
+    80% {top: 280px;}  
+    90%{top: -260px;}
+    100%{top: 0;}
+
+} 
+
+
+@keyframes bola {
+
+    0%{
+        left: 8px;
+        top:50px;
+    }
+
+    10%{
+        left:97.5%  ;
+        top:300px;
+        
+    }
+
+    20%{
+        left: 8px;
+        top:285px;
+    }
+
+    30%{
+        left:97.5%  ;
+        top:80px;
+   
+    }
+
+    40%{
+        left: 8px;
+        top:50px;
+    }
+
+    50%{
+        left:97.5%  ;
+        top:300px;
+    }
+
+    60%{
+        left: 8px;
+        top:300px;
+    }
+
+    70%{
+        left:97.5%  ;
+        top:-20px;
+
+    }
+
+    80%{
+        left: 8px;
+        top:-240px;
+    }
+
+    90%{
+        left: 97.5%;
+        top:-210px;
+    }
+
+    100%{
+        left: 8px;
+        top:50px;
+
+    }
+
+}    
+
+
+@keyframes branco {
+
+   0%{
+        background-color:white ;
+       
+        z-index: 1;
+   }
+
+   10%{
+        background-color:yellow ;
+        border: 15px double yellow;
+        border-radius: 15px;
+        z-index: 1;
+   }
+
+   20%{
+        background-color:white ;
+        z-index: 1;
+   }
+
+   30%{
+         background-color:white ;
+         z-index: 1;
+   }
+
+   40%{
+        background-color:white ;
+        z-index: 1;
+   }
+
+   50%{
+        background-color:white ;
+        z-index: 1;
+   }
+
+   60%{
+        background-color:white ;
+        z-index: 1;
+   }
+
+   70%{
+        background-color:white ;
+        z-index: 1;
+   }
+
+   80%{
+        background-color:white ;
+        z-index: 1;
+
+    }
+
+    90%{
+        background-color:white ;
+        z-index: 1;
+    }
+
+    100%{
+        background-color:white ;
+        z-index: 1;
+}
+
+}    
